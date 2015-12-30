@@ -39,7 +39,7 @@ public class SwipeRefreshLayoutManager extends ViewGroupManager<ReactSwipeRefres
 
     @Override
     public String getName() {
-        return "RNRefreshScroolView";
+        return "RNRefreshScrollView";
     }
 
     @ReactProp(name = ViewProps.ENABLED, defaultBoolean = true)

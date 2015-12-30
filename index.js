@@ -11,9 +11,9 @@ var RefreshLayoutConsts = require('NativeModules').UIManager.RNRefreshScroolView
 
 var onlyChild = require('onlyChild');
 
-var S_REF = 'RNRefreshScroolView';
+var S_REF = 'RNRefreshScrollView';
 
-var RNRefreshListView = React.createClass({
+var RNRLScrollview = React.createClass({
         statics: {
             SIZE: RefreshLayoutConsts.SIZE,
         },
@@ -50,13 +50,14 @@ var RNRefreshListView = React.createClass({
 
         _onRefresh()
         {
+            //invoke your onRefresh func
             this.props.onRefresh && this.props.onRefresh();
         },
 
         _onLoadmore()
         {
+            //invoke your onLoadMore func
             this.props.onLoadMore && this.props.onLoadMore();
-            //this.refs[S_REF].setNativeProps({refreshing: !!this.props.refreshing});
         },
 
         loadComplete()
@@ -65,7 +66,7 @@ var RNRefreshListView = React.createClass({
         },
 
         render: function () {
-            return (<RNRefreshScroolView
+            return (<RNRefreshScrollView
                     colors={this.props.colors && this.props.colors.map(processColor)}
                     enabled={this.props.enabled}
                     refreshing={this.props.refreshing}
@@ -77,13 +78,13 @@ var RNRefreshListView = React.createClass({
                     onLoadmore={this._onLoadmore}
                     {...this.props} >
                     {onlyChild(this.props.children)}
-                </RNRefreshScroolView>
+                </RNRefreshScrollView>
             );
         }
         ,
     })
     ;
 
-var RNRefreshScroolView = requireNativeComponent('RNRefreshScroolView', RNRefreshListView);
+var RNRefreshScrollView = requireNativeComponent('RNRefreshScrollView', RNRLScrollview);
 
-module.exports = RNRefreshListView;
+module.exports = RNRLScrollview;
