@@ -12,19 +12,19 @@ so I modify the SwipeRefreshLayoutManager.java to add the pull-up-loadmore .
 
 use:
 
-  npm install react-native-refresh-loadmore-scrollview --save
+         npm install react-native-refresh-loadmore-scrollview --save
 
   in android Setting.gradle add include and projectDir config like this:
 
-  rootProject.name = 'example'
+     rootProject.name = 'example'
 
-  include ':react-native-refresh-loadmore-scrollview'
+     include ':react-native-refresh-loadmore-scrollview'
 
-  project(':react-native-refresh-loadmore-scrollview').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-refresh-loadmore-scrollview')
+      project(':react-native-refresh-loadmore-scrollview').projectDir = new File(rootProject.projectDir,              '../node_modules/react-native-refresh-loadmore-scrollview')
 
   and in application's build.gradle
 
-  add compile project(':react-native-refresh-loadmore-scrollview') in dependencies like this:
+      add compile project(':react-native-refresh-loadmore-scrollview') in dependencies like this:
 
 
   dependencies {
