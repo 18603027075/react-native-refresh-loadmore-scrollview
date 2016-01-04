@@ -1,6 +1,6 @@
 {
   "name": "react-native-refresh-loadmore-scrollview",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "react-native-refresh-loadmore-scrollview written in java and javascript for android support",
   "main": "index.js",
   "scripts": {

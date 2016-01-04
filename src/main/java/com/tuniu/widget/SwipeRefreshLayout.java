@@ -733,7 +733,7 @@ public class SwipeRefreshLayout extends ViewGroup implements NestedScrollingPare
                 }
                 final float yDiff = y - mInitialDownY;
                 Log.e("onInterceptTouchEvent","yDiff=========="+yDiff) ;
-                boolean draggin = (canChildScrollDown()&&yDiff > mTouchSlop) || (canChildScrollUp()&&yDiff < -mTouchSlop) ;
+                boolean draggin = ((!canChildScrollUp())&&yDiff > mTouchSlop) || ((!canChildScrollDown())&&yDiff < -mTouchSlop) ;
                 if (draggin && !mIsBeingDragged) {
                     mInitialMotionY = mInitialDownY + mTouchSlop;
                     mIsBeingDragged = true;
@@ -1049,7 +1049,7 @@ public class SwipeRefreshLayout extends ViewGroup implements NestedScrollingPare
                 final float overscrollTop = (y - mInitialMotionY) * DRAG_RATE;
                 Log.e("onTouchEvent","overscrollTop=========="+overscrollTop) ;
                 if (mIsBeingDragged) {
-                    boolean canMoveSpinner = (canChildScrollDown() && overscrollTop > 0 ) || (canChildScrollUp() &&overscrollTop < 0) ;
+                    boolean canMoveSpinner = ((!canChildScrollUp()) && overscrollTop > 0 ) || ((!canChildScrollDown()) &&overscrollTop < 0) ;
                     if (canMoveSpinner) {
                         moveSpinner(Math.abs(overscrollTop));
                     } else {
