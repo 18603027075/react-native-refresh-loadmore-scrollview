@@ -7,7 +7,7 @@ var React = require('react-native');
 var { requireNativeComponent, PropTypes,View,processColor } = React;
 var RCTUIManager = React.NativeModules.UIManager;
 
-var RefreshLayoutConsts = require('NativeModules').UIManager.RNRefreshScroolView.Constants;
+var RefreshLayoutConsts = require('NativeModules').UIManager.RNRefreshScrollView.Constants;
 
 var onlyChild = require('onlyChild');
 
